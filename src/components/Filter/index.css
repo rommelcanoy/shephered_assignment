@@ -1,12 +1,3 @@
-/* @import url('https://fonts.googleapis.com/css2?family=PT+Mono&family=Ubuntu+Mono:wght@700&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&family=Ubuntu+Mono:wght@700&display=swap');
-
-body {
-  /* font-family: 'PT Mono', monospace; */
-  /* font-family: 'Ubuntu Mono', monospace; */
-  font-family: 'Bitter', serif;
-}
-
 div.options>label>input {
   visibility: hidden;
 }
@@ -17,6 +8,7 @@ div.options>label {
   padding: 0 0 20px 0;
   height: 20px;
   width: 100%;
+  /* border: 1px solid red; */
 }
 
 div.options>label>img {
@@ -25,9 +17,11 @@ div.options>label>img {
   height: 15px;
   width: 15px;
   background-color: white;
+  /* border: 1px solid green; */
   margin-top: -4px;
   margin-right: 11px;
   cursor: pointer;
+  /* border: 1px solid black; */
 }
 
 div.options>label>input:checked+img {
@@ -48,7 +42,10 @@ input[type=checkbox].css-checkbox {
   -moz-appearance: none;
   -webkit-appearance: none;
   -o-appearance: none;
+  /* outline: none; */
+  /* outline: 1px solid #1e5180; */
   content: none;
+  /* border: 0; */
 }
 
 input[type=checkbox].css-checkbox+label.css-label {

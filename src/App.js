@@ -4,8 +4,11 @@ import CatalogItem from './components/CatalogItem';
 import CatalogSearch from './components/CatalogSearch';
 import Filter from './components/Filter';
 import HeaderNavigation from './components/HeaderNavigation';
+import { useResizeDetector } from 'react-resize-detector';
+
 
 function App() {
+  const { width, ref } = useResizeDetector();
 
   const catalog = [
     {
@@ -35,13 +38,15 @@ function App() {
   ]
 
   return (
-    <div className="App flex flex-col h-screen">
-      <HeaderNavigation />
+    <div className="App flex flex-col h-screen" ref={ref}>
+      <HeaderNavigation width={width} />
       <div className='flex justify-center'>
-        <div className='max-w-[1920px] w-full debug px-[15px] py-[15px] md:px-[70px] md:py-[45px] flex-1  flex  gap-[39px] flex-wrap-reverse justify-center'>
-          <div className=''>
+        {/* <div className='max-w-[1920px] w-full px-[15px] py-[15px] md:px-[70px] md:py-[45px] flex-1 flex  gap-[15px] md:gap-[39px] flex-wrap-reverse justify-center'> */}
+        <div className='max-w-[1920px] w-full px-[15px] py-[15px] md:px-[70px] md:py-[45px] flex-1 flex flex-col-reverse lg:flex-row gap-[15px] md:gap-[39px] justify-center'>
+          <div className=' flex-1 lg:min-w-[500px]'>
             <CatalogSearch />
-            <div className='mt-[39px]  max-w-[1002px]'>
+            {/* <div className='mt-[30px] md:mt-[39px]  max-w-[1002px] debug'> */}
+            <div className='mt-[30px] md:mt-[39px] '>
               {
                 catalog && catalog.map((item, index) => (
                   <CatalogItem key={index.toString()} item={item} />
@@ -49,7 +54,7 @@ function App() {
               }
             </div>
           </div>
-          <Filter />
+          <Filter width={width}/>
         </div>
       </div>
     </div>

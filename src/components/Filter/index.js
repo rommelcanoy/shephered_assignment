@@ -1,18 +1,30 @@
-import React, { useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from 'react'
 
-const Filter = () => {
+const Filter = ({width}) => {
   const [collapse, setCollapse] = useState(false);
 
   const handleCollapse = () => {
     setCollapse(!collapse);
   }
 
+  useEffect(() => {
+    if(width >= 768){
+      setCollapse(false);
+    }
+  }, [width])
+
   return (
-    <div className='flex flex-col gap-1 flex-1 max-w-[1153px] w-full'>
-      <div className='bg-[#F4F4F4] h-[83px] px-[38px] py-[30px] flex justify-between items-center'>
+    <div className='flex flex-col gap-1 flex-0 lg:w-[554px] '>
+      <div className='bg-[#F4F4F4] md:h-[83px] px-[15px] py-[15px] md:px-[38px] md:py-[30px] flex justify-between items-center'>
         <h3 className='font-bold text-xl leading-[20px]'>Filters</h3>
         <button onClick={handleCollapse}>
-          Collapse
+          {
+            collapse ? <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m12 15.375-6-6 1.4-1.4 4.6 4.6 4.6-4.6 1.4 1.4Z" /></svg>
+              :
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24"><path d="m7.4 15.375-1.4-1.4 6-6 6 6-1.4 1.4-4.6-4.6Z" /></svg>
+          }
+
         </button>
       </div>
       {

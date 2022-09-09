@@ -3,7 +3,7 @@ import React from 'react'
 const CatalogItem = ({item}) => {
   
   return (
-    <div className='px-[15px] py-[15px] md:px-[39px] md:py-[30px]'>
+    <div className='px-[15px] py-[20px] md:px-[39px] md:py-[30px]'>
       <div className='font-black text-2xl mb-[30px]'>
         {item.name}
       </div>

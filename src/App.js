@@ -37,18 +37,20 @@ function App() {
   return (
     <div className="App flex flex-col h-screen">
       <HeaderNavigation />
-      <div className=' px-[70px] py-[45px]  flex-1 flex gap-[39px]'>
-        <div>
-          <CatalogSearch />
-          <div className='mt-[39px]  w-[1002px]'>
-            {
-              catalog && catalog.map((item) => (
-                <CatalogItem item={item}/>
-              ))
-            }
+      <div className='flex justify-center'>
+        <div className='max-w-[1920px] w-full debug px-[15px] py-[15px] md:px-[70px] md:py-[45px] flex-1  flex  gap-[39px] flex-wrap-reverse justify-center'>
+          <div className=''>
+            <CatalogSearch />
+            <div className='mt-[39px]  max-w-[1002px]'>
+              {
+                catalog && catalog.map((item, index) => (
+                  <CatalogItem key={index.toString()} item={item} />
+                ))
+              }
+            </div>
           </div>
+          <Filter />
         </div>
-        <Filter />
       </div>
     </div>
   );

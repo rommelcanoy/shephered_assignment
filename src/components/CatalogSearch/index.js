@@ -2,7 +2,7 @@ import React from 'react'
 
 const CatalogSearch = () => {
   return (
-    <div className='flex  w-[1153px] h-[83px] gap-[39px] flex-none'>
+    <div className='flex w-full max-w-[1153px] h-[83px] gap-[39px] flex-none'>
       <div className='bg-[#F4F4F4]  flex-1 flex justify-center items-center px-[34px] py-[18px]'>
         <input type="text" className="px-[20px] py-[15px] bg-white border-b-4 border-t-0 border-r-0 border-l-0 border-black focus:border-black focus:ring-0 hover:border-black  w-full h-full font-bold" />
       </div>
